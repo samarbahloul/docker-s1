@@ -15,7 +15,7 @@ new Promise(async (resolve, reject) => {
     reject(ex);
   }
   if (response) {
-    // success
+    console.log("sucess")
     const json = response.data;
     console.log(json);
     resolve(json);
