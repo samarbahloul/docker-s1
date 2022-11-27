@@ -6,6 +6,9 @@ jobs:
   build:
     name: First Build job
     runs-on: ubuntu-latest
+    defaults:
+       run:
+         working-directory: ./server/
 
     strategy:
       matrix:
@@ -20,7 +23,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: subdir/package-lock.json
+        cache-dependency-path: './server/package-lock.json'
     - name: Install
       run: npm install
     - name: Build
