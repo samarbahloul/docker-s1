@@ -30,4 +30,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag samarbahloul/docker-s1:${GITHUB_SHA::8}
     - name: Push Docker image to Docker Hub
-      run: docker push ${{secrets.DOCKER_USERNAME}}/dockers1:${GITHUB_SHA::8}
+      run: docker push ${{secrets.DOCKER_HUB_USERNAME}}/dockers1:${GITHUB_SHA::8}
